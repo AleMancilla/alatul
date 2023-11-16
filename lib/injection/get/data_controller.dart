@@ -38,6 +38,10 @@ class DataController extends GetxController {
         .toList();
   }
 
+  User getUser(int id) {
+    return userService.value.firstWhere((element) => element.id == id);
+  }
+
   List<TextSpan> highlightOccurrences(String query, String text) {
     List<TextSpan> spans = [];
     final pattern = RegExp(query, caseSensitive: false);

@@ -1,5 +1,7 @@
+import 'package:atalup_app/core/animation.dart';
 import 'package:atalup_app/core/utils.dart';
 import 'package:atalup_app/injection/get/data_controller.dart';
+import 'package:atalup_app/presentation/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -57,10 +59,13 @@ class HomeScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            'assets/images/logo.png',
-            width: 100,
-            height: 100,
+          Hero(
+            tag: 'log_gamlp',
+            child: Image.asset(
+              'assets/images/logo.png',
+              width: 100,
+              height: 100,
+            ),
           ),
           Text(
             'Alatul',
@@ -106,7 +111,15 @@ class HomeScreen extends StatelessWidget {
   Widget itemPost(int index) {
     return Material(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          // controller.filterinformationService.value[index]
+          Navigator.push(
+            (Get.context!),
+            animationChangingScreen(PostScreen(
+              post: controller.filterinformationService.value[index],
+            )),
+          );
+        },
         child: Stack(
           children: [
             _backPart(),

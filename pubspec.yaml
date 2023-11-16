@@ -42,6 +42,13 @@ dependencies:
   # state managment
   get: 
 
+  # maps
+  flutter_map: ^5.0.0
+  flutter_map_animations: 
+  latlong2: ^0.9.0
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

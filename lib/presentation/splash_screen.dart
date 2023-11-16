@@ -1,4 +1,4 @@
-import 'package:atalup_app/presentation/splash_controller.dart';
+import 'package:atalup_app/injection/get/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
